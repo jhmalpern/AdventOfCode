@@ -15,7 +15,7 @@ def main():
     for i in range(len(puzzleInput)):
         floor = floor + 1 if puzzleInput[i] == "(" else  floor-1
         if floor <0: 
-            print("Basement reached at turn %s" % (i))
+            print("Basement reached at turn %s" % (i+1))
             break
     
     print("Code took %s seconds to execute" % round(time.time() - startTime, 4))
