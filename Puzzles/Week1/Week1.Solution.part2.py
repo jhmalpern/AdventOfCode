@@ -11,7 +11,7 @@ def main():
         puzzleInput = f.read()
     
     # Need to figure out when we enter the basement for the FIRST time
-    floor=0 #Starts at ground (floor = 0)
+    floor = 0 #Starts at ground (floor = 0)
     for i in range(len(puzzleInput)):
         floor = floor + 1 if puzzleInput[i] == "(" else  floor-1
         if floor <0: 
