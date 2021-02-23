@@ -10,12 +10,9 @@ def main():
     #For Loop approach
     wrapNeeded = 0
     for i  in range(len(puzzleInput)):
-        side1 = int(puzzleInput[i].split('x')[0]) * int(puzzleInput[i].split('x')[1])
-        side2 = int(puzzleInput[i].split('x')[1]) * int(puzzleInput[i].split('x')[2])
-        side3 = int(puzzleInput[i].split('x')[0] )* int(puzzleInput[i].split('x')[2])
-        slack = min(side1,side2,side3)
-        wrapNeeded = wrapNeeded + (2*side1) + (2*side2) + (2*side3) + slack  
-
+        l, w, h = [int(i) for i in puzzleInput[i].split('x')]
+        area = 2*l*w + 2*w*h + 2*l*h
+        wrapNeeded = wrapNeeded + area + min(l*w,w*h,l*h)
 
     print("Elves need %s feet of wrapping paper" % (wrapNeeded))
     print("It took %s to execute this solution" % (round(time.time()-startTime, 4)))
