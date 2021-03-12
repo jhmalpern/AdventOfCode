@@ -14,12 +14,12 @@ def find_a(wire):
             res = find_a(oper[0]) 
         else:
             action = oper[-2] # Identify bitwise operator
-            if action == 'AND':
-              res = find_a(oper[0]) & find_a(oper[2]) # add two results together...but find recursively
+            if action == 'AND': 
+              res = find_a(oper[0]) & find_a(oper[2]) 
             elif action == 'OR':
-              res = find_a(oper[0]) | find_a(oper[2]) # Or result
+              res = find_a(oper[0]) | find_a(oper[2]) 
             elif action == 'NOT': 
-              res = ~find_a(oper[1]) & 65535
+              res = ~find_a(oper[1]) & 65535 # NOT opperator is a bit funny in python
             elif action == 'RSHIFT':
               res = find_a(oper[0]) >> find_a(oper[2])
             elif action == 'LSHIFT':
