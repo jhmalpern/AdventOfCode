@@ -1,8 +1,10 @@
 # imports
+import time
 
 ##### Part 2 #####
 with open("PuzzleInput.txt","r") as f:
     puzzleInput = f.read().splitlines()
+startTime = time.time()
 calc = dict()
 signals = dict() #Dictionary of wire signals AFTER operation successful
 signals2 = dict()
@@ -63,7 +65,7 @@ def find_a_again(wire):
     return signals2[wire]
 
 def main():
-    print("The signal at wire 'a' is: %d" % (find_a_again('a')))
+    print("The signal at wire 'a' is: %d \n Part 2 solution took %s seconds" % (find_a_again('a'),round(time.time()-startTime,4)))
 
 if __name__ == "__main__":
     main()
