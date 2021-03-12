@@ -13,7 +13,6 @@ def find_a(wire):
     try:
         return(int(wire)) #try to return int(wire) but pass if can't b/c value doesn't exist
     except:
-        #print(wire)
         pass
     if wire not in signals: # 'a' hasn't been solved yet so need to calculate another wire
         oper = calc[wire]
@@ -33,9 +32,6 @@ def find_a(wire):
               res = find_a(oper[0]) << find_a(oper[2])
         signals[wire] = res
     return signals[wire]
-
-
-
 
 def main():
     print("The signal at wire 'a' is: %d" % (find_a('a')))
